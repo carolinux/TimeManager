@@ -2,23 +2,25 @@ language: python
 
 python:
         - "2.7"
-
+virtualenv:
+      system_site_packages: true
+          
 install:
         - sudo apt-get install expect
         - sudo apt-get install python-qt4
         - sudo apt-get install qgis
         - sudo apt-get install python-qgis
-        - pip install mock
         - sudo apt-get install vnc4server # to mock an X Server
+        - pip install mock
         - pip install nose
         - pip install coverage
 
 before_script:
         - expect vnc.expect 1001 # handle the interactive setup of vnc
         - export DISPLAY=localhost:1001
-        - sudo ldconfig
-        - export LD_LIBRARY_PATH=/usr/lib/qgis
-        - export PYTHONPATH=/usr/share/qgis/python/
+          #- sudo ldconfig
+          #- export LD_LIBRARY_PATH=/usr/lib/qgis
+          #- export PYTHONPATH=/usr/share/qgis/python/
 #script:  python -m unittest test_functionality
 script:  sh run_tests.sh
 
