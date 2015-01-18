@@ -4,9 +4,9 @@ python:
         - "2.7"
 
 install:
-        - sudo apt-get python-qt4
-        - sudo apt-get qgis
-        - sudo apt-get python-qt4
+        - sudo apt-get install python-qt4
+        - sudo apt-get install qgis
+        - sudo apt-get python-qgis
         - pip install mock
         - sudo apt-get install vnc4server # to mock an X Server
         - pip install nose
