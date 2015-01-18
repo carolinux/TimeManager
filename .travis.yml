@@ -4,7 +4,7 @@ python:
         - "2.7"
 virtualenv:
       system_site_packages: true
-          
+
 install:
         - sudo apt-get install expect
         - sudo apt-get install python-qt4
@@ -17,11 +17,7 @@ install:
 
 before_script:
         - expect vnc.expect 1001 # handle the interactive setup of vnc
-        - export DISPLAY=localhost:1001
-          #- sudo ldconfig
-          #- export LD_LIBRARY_PATH=/usr/lib/qgis
-          #- export PYTHONPATH=/usr/share/qgis/python/
-#script:  python -m unittest test_functionality
-script:  sh run_tests.sh
+    # - export DISPLAY=localhost:1001
+script:  export DISPLAY=localhost:1001;sh run_tests.sh
 
 
