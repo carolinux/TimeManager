@@ -13,9 +13,7 @@ install:
         - pip install coverage
 
 before_script:
-        - mkdir ~/.vnc
-        - cp ./testdata/dummypwd_vnc ~/.vnc/passwd
-        - vnc4server :1001 #(interacteev)
+        - expect vnc.expect 1001 # handle the interactive setup of vnc
         - export DISPLAY=localhost:1001
 
 #script:  python -m unittest test_functionality
