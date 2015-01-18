@@ -1,0 +1,6 @@
+set port [lindex $argv -1];
+spawn vnc4server :$port
+expect Password: { send "123456\r"}
+sleep 1
+expect Verify: { send "123456\r"}
+sleep 1
