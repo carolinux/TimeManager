@@ -16,7 +16,7 @@ install:
 before_script:
         - expect vnc.expect 1001 # handle the interactive setup of vnc
         - export DISPLAY=localhost:1001
-
+        - export PYTHONPATH=/usr/share/qgis/python/
 #script:  python -m unittest test_functionality
 script:  sh run_tests.sh
 
