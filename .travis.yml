@@ -1,0 +1,22 @@
+language: python
+
+python:
+        - "2.7"
+
+install:
+        - sudo apt-get python-qt4
+        - sudo apt-get qgis
+        - sudo apt-get python-qt4
+        - pip install mock
+        - sudo apt-get install vnc4server # to mock an X Server
+        - pip install nose
+        - pip install coverage
+
+before_install:
+        - vnc4server :1001 (interacteev)
+        - export DISPLAY=localhost:1001
+
+#script:  python -m unittest test_functionality
+script:  sh run_tests.sh
+
+
