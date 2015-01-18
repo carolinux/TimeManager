@@ -12,7 +12,7 @@ install:
         - pip install nose
         - pip install coverage
 
-before_install:
+before_script:
         - vnc4server :1001 #(interacteev)
         - export DISPLAY=localhost:1001
 
