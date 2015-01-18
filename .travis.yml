@@ -13,7 +13,8 @@ install:
         - pip install coverage
 
 before_script:
-        - vnc4server :1001 #(interacteev)
+        - echo "123456" >> ./dummypwd
+        - vnc4server :1001 --passwd ./dummypwd #(interacteev)
         - export DISPLAY=localhost:1001
 
 #script:  python -m unittest test_functionality
