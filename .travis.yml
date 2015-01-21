@@ -12,10 +12,10 @@ before_install:
         - psql -c 'create database mydb;' -U postgres
 
 install:
+        - sudo rm /etc/apt/sources.list.d/ubuntugis-stable-source.list # work around for qgis/postgis package problems on travis
         - sudo apt-get install python-qt4
         - sudo apt-get install qgis
         - sudo apt-get install python-qgis
-        - sudo apt-get install postgresql-9.3-postgis-2.1
         - sudo apt-get install vnc4server # to mock an X Server
         - pip install mock
         - pip install nose
