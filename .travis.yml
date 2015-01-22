@@ -19,7 +19,7 @@ install:
         - gpg --export --armor 997D3880 | sudo apt-key add -
         - sudo apt-get update
         - sudo apt-get install python-qt4
-        - sudo apt-get install qgis
+        - sudo apt-get install qgis --force-yes
         - sudo apt-get install python-qgis
         - sudo apt-get install vnc4server # to mock an X Server
         - pip install mock
